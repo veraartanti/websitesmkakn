@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak | SMK Telkom Terpadu AKN Marzuqi</title>
+
+  <!-- Font Google & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #e3f2fd, #bbdefb);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 15px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      flex-wrap: wrap;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    header .logo img {
+      width: 45px;
+    }
+
+    header .logo h2 {
+      font-size: 18px;
+      color: #333;
+      line-height: 1.2;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #007BFF;
+    }
+
+    /* ===== SECTION KONTAK ===== */
+    .kontak {
+      max-width: 1100px;
+      margin: 70px auto;
+      background: white;
+      padding: 60px 70px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 123, 255, 0.15);
+      border-top: 5px solid #007BFF;
+    }
+
+    .kontak h2 {
+      text-align: center;
+      font-size: 30px;
+      color: #007BFF;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    .kontak p {
+      text-align: center;
+      color: #555;
+      margin-bottom: 50px;
+      font-size: 15px;
+    }
+
+    .kontak-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    /* Form kontak */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+
+    form label {
+      font-weight: 600;
+      font-size: 15px;
+      color: #004ba0;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #90caf9;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      background-color: #f8fbff;
+    }
+
+    form input:focus, form textarea:focus {
+      border-color: #007BFF;
+      box-shadow: 0 0 6px rgba(0,123,255,0.3);
+      outline: none;
+      background-color: white;
+    }
+
+    form button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+      width: 180px;
+      align-self: flex-start;
+      box-shadow: 0 3px 10px rgba(0,123,255,0.3);
+    }
+
+    form button:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    /* Info kontak */
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .info-box {
+      background: linear-gradient(to right, #e3f2fd, #ffffff);
+      border-left: 5px solid #007BFF;
+      border-radius: 10px;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+
+    .info-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,123,255,0.2);
+    }
+
+    .info-box i {
+      font-size: 24px;
+      color: #007BFF;
+    }
+
+    .info-text h3 {
+      font-size: 16px;
+      margin-bottom: 5px;
+      color: #004ba0;
+    }
+
+    .info-text p {
+      font-size: 14px;
+      color: #555;
+      margin: 0;
+    }
+
+    .info-text a {
+      color: #004ba0;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .info-text a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: #0b5394;
+      color: #ddd;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 14px;
+      margin-top: 60px;
+      width: 100%;
+    }
+
+    footer p {
+      margin-bottom: 8px;
+    }
+
+    footer .social a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 20px;
+      transition: color 0.3s;
+    }
+
+    footer .social a:hover {
+      color: #007BFF;
+    }
+
+    /* ===== RESPONSIF ===== */
+    @media (max-width: 1024px) {
+      header {
+        padding: 15px 40px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .kontak {
+        padding: 40px 25px;
+        margin: 40px 15px;
+      }
+
+      .kontak-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      form button {
+        width: 100%;
+        align-self: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .kontak h2 {
+        font-size: 24px;
+      }
+
+      .kontak p {
+        font-size: 14px;
+      }
+
+      form label {
+        font-size: 14px;
+      }
+
+      footer {
+        font-size: 13px;
+        padding: 20px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="img/logosmk.jpeg" alt="Logo Sekolah">
+      <h2>SMK Telkom Terpadu AKN Marzuqi</h2>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="jurusan.html">Jurusan</a></li>
+        <li><a href="ppdb.html">PPDB</a></li>
+        <li><a href="berita.html">Berita</a></li>
+        <li><a href="ekstra.html">Ekstra</a></li>
+        <li><a href="kontak.html" class="active">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- BAGIAN KONTAK -->
+  <section class="kontak">
+    <h2>Hubungi Kami</h2>
+    <p>Silakan isi formulir berikut atau hubungi kami melalui kontak yang tersedia di samping.</p>
+
+    <div class="kontak-container">
+      <!-- Form -->
+      <form id="formKontak" onsubmit="return validasiForm()">
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Masukkan email aktif">
+
+        <label for="pesan">Pesan</label>
+        <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini..."></textarea>
+
+        <button type="submit">Kirim Pesan</button>
+      </form>
+
+      <!-- Info Kontak -->
+      <div class="info">
+        <div class="info-box">
+          <i class="fas fa-map-marker-alt"></i>
+          <div class="info-text">
+            <h3>Alamat</h3>
+            <p>Jl. Raya Tayu-Puncel Km. 11 Selempung, Dukuhseti, Pati 59158</p>
+          </div>
+        </div>
+        <div class="info-box">
+          <i class="fas fa-phone"></i>
+          <div class="info-text">
+            <h3>Telepon</h3>
+            <p>0812-3456-7890</p>
+          </div>
+        </div>
+        <div class="info-box">
+          <i class="fas fa-envelope"></i>
+          <div class="info-text">
+            <h3>Email</h3>
+            <p>info@smktelkommarzuqi.sch.id</p>
+          </div>
+        </div>
+        <div class="info-box">
+          <i class="fab fa-whatsapp"></i>
+          <div class="info-text">
+            <h3>WhatsApp</h3>
+            <p><a href="https://wa.me/6281234567890" target="_blank">Chat via WhatsApp</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Jl. Raya Tayu-Puncel Km. 11 Selempung, Dukuhseti, Pati 59158</p>
+    <p>&copy; 2025 SMK Telkom Terpadu AKN Marzuqi</p>
+    <div class="social">
+      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://wa.me/6281234567890" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </footer>
+
+  <!-- VALIDASI FORM -->
+  <script>
+    function validasiForm() {
+      const nama = document.getElementById("nama").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const pesan = document.getElementById("pesan").value.trim();
+
+      if (nama === "" || email === "" || pesan === "") {
+        alert("⚠️ Harap isi semua kolom sebelum mengirim pesan!");
+        return false;
+      }
+
+      alert("✅ Pesan Anda berhasil dikirim. Terima kasih telah menghubungi kami!");
+      return true;
+    }
+  </script>
+
+</body>
+</html>

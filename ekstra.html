@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ekstrakurikuler - SMK Telkom Terpadu AKN Marzuqi</title>
+
+  <!-- Font Google & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* ======== RESET DAN FONT ======== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* ======== HEADER ======== */
+    header {
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 15px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    header .logo img {
+      width: 45px;
+    }
+
+    header .logo h2 {
+      font-size: 18px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #007BFF;
+    }
+
+    /* ======== HERO SECTION ======== */
+    .hero-ekstra {
+      background: linear-gradient(to right, #eaf1ff, #f5f8ff);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 100px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      max-width: 50%;
+    }
+
+    .hero-text h1 {
+      font-size: 34px;
+      color: #0b214a;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .hero-text p {
+      font-size: 16px;
+      color: #444;
+      margin-bottom: 25px;
+    }
+
+    .hero-text .btn {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 25px;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+      font-weight: 500;
+    }
+
+    .hero-text .btn:hover {
+      background-color: #0056d2;
+    }
+
+    .hero-ekstra img {
+      width: 380px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    }
+
+    /* ======== DAFTAR EKSTRA ======== */
+    .ekstra-section {
+      padding: 60px 100px;
+    }
+
+    .ekstra-section h2 {
+      font-size: 26px;
+      color: #0b214a;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    .ekstra-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .ekstra-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;        /* posisi horizontal tengah */
+    justify-content: center;    /* posisi vertikal tengah */
+    text-align: center;
+    }
+
+    .ekstra-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    .ekstra-card img {
+    width: 80%;                 /* biar tidak melewati batas kartu */
+    height: 180px;              
+    object-fit: contain;        
+    background-color: #f5f7ff;  
+    padding: 10px;              
+    display: block;
+    margin: 0 auto;             /* pastikan tetap rata tengah */
+    border-radius: 10px;        /* opsional: biar sudutnya halus */
+    }
+
+    .ekstra-card-content {
+      padding: 15px;
+    }
+
+    .ekstra-card-content h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: #111;
+      font-weight: 600;
+    }
+
+    .ekstra-card-content p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* ======== FOOTER ======== */
+    footer {
+      background-color: #0b5394;
+      color: #ddd;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 14px;
+      margin-top: 50px;
+    }
+
+    footer p {
+      margin-bottom: 8px;
+    }
+
+    footer .social a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 20px;
+      transition: color 0.3s;
+    }
+
+    footer .social a:hover {
+      color: #007BFF;
+    }
+
+    /* ======== RESPONSIVE DESIGN ======== */
+    @media (max-width: 992px) {
+      header {
+        padding: 15px 40px;
+      }
+
+      .hero-ekstra {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 40px;
+      }
+
+      .hero-text {
+        max-width: 100%;
+      }
+
+      .hero-ekstra img {
+        width: 80%;
+        margin-top: 25px;
+      }
+
+      .ekstra-section {
+        padding: 50px 40px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        padding: 15px 20px;
+        text-align: center;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        padding-top: 10px;
+      }
+
+      .hero-text h1 {
+        font-size: 26px;
+      }
+
+      .hero-text p {
+        font-size: 14px;
+      }
+
+      .hero-ekstra img {
+        width: 90%;
+      }
+
+      .ekstra-section {
+        padding: 40px 20px;
+      }
+
+      footer {
+        font-size: 13px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="img/logosmk.jpeg" alt="Logo Sekolah">
+      <h2>SMK Telkom Terpadu AKN Marzuqi</h2>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="jurusan.html">Jurusan</a></li>
+        <li><a href="ppdb.html">PPDB</a></li>
+        <li><a href="berita.html">Berita</a></li>
+        <li><a href="ekstra.html" class="active">Ekstra</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO EKSTRA -->
+  <section class="hero-ekstra">
+    <div class="hero-text">
+      <h1>Kegiatan Ekstrakurikuler SMK Telkom Terpadu AKN Marzuqi</h1>
+      <p>Selain unggul dalam akademik dan teknologi, kami juga membentuk karakter, kepemimpinan, dan kreativitas melalui berbagai kegiatan ekstrakurikuler yang seru dan bermanfaat.</p>
+      <a href="#daftar-ekstra" class="btn">Lihat Kegiatan</a>
+    </div>
+    <img src="img/img6.jpeg" alt="Kegiatan Ekstra">
+  </section>
+
+  <!-- DAFTAR EKSTRA -->
+  <section class="ekstra-section" id="daftar-ekstra">
+    <h2>Daftar Ekstrakurikuler</h2>
+    <div class="ekstra-grid">
+      <div class="ekstra-card">
+        <img src="img/pramuka.png" alt="Pramuka">
+        <div class="ekstra-card-content">
+          <h3>Pramuka</h3>
+          <p>Kegiatan Pramuka membentuk keterampilan, kepemimpinan, dan semangat kebersamaan melalui latihan baris-berbaris, tali-temali, pionering, dan survival.</p>
+        </div>
+      </div>
+
+      <div class="ekstra-card">
+        <img src="img/badminton.jpeg" alt="Badminton">
+        <div class="ekstra-card-content">
+          <h3>Badminton</h3>
+          <p>Melatih fisik, mental, serta sportivitas siswa melalui latihan dan turnamen badminton rutin.</p>
+        </div>
+      </div>
+
+      <div class="ekstra-card">
+        <img src="img/futsal.png" alt="Futsal">
+        <div class="ekstra-card-content">
+          <h3>Futsal</h3>
+          <p>Melatih kekompakan, tanggung jawab, dan kerja sama tim dalam olahraga futsal.</p>
+        </div>
+      </div>
+
+      <div class="ekstra-card">
+        <img src="img/pmr.jpeg" alt="PMR">
+        <div class="ekstra-card-content">
+          <h3>PMR</h3>
+          <p>Mengasah kepedulian sosial dan kemampuan pertolongan pertama untuk sesama.</p>
+        </div>
+      </div>
+
+      <div class="ekstra-card">
+        <img src="img/taekwondo.png" alt="Taekwondo">
+        <div class="ekstra-card-content">
+          <h3>Taekwondo</h3>
+          <p>Melatih kedisiplinan, fokus, dan mental juara melalui bela diri taekwondo.</p>
+        </div>
+      </div>
+
+      <div class="ekstra-card">
+        <img src="img/tari.jpeg" alt="Tari">
+        <div class="ekstra-card-content">
+          <h3>Tari</h3>
+          <p>Menyalurkan bakat seni dan menjaga budaya melalui tarian tradisional dan modern.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Jl. Raya Tayu-Puncel Km. 11 Selempung, Dukuhseti, Pati 59158</p>
+    <p>&copy; 2025 SMK Telkom Terpadu AKN Marzuqi</p>
+    <div class="social">
+      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://wa.me/6281234567890" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </footer>
+
+</body>
+</html>

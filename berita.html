@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Berita Sekolah - SMK Telkom Terpadu AKN Marzuqi</title>
+
+<!-- Font Google & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ===== HEADER ===== */
+  header {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 15px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    transition: all 0.3s ease;
+  }
+
+  header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  header .logo img {
+    width: 45px;
+  }
+
+  header .logo h2 {
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  nav ul li a:hover {
+    color: #007BFF;
+  }
+
+  /* ===== HERO BERITA ===== */
+  .hero-berita {
+    background: linear-gradient(to right, #e7f0ff, #eef3ff);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 100px;
+    flex-wrap: wrap;
+  }
+
+  .hero-berita-text {
+    max-width: 50%;
+  }
+
+  .hero-berita-text h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 15px;
+  }
+
+  .hero-berita-text p {
+    font-size: 16px;
+    margin-bottom: 25px;
+    color: #555;
+  }
+
+  .hero-berita-text .btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .hero-berita-text .btn:hover {
+    background-color: #0056b3;
+  }
+
+  .hero-berita img {
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  }
+
+  /* ===== BERITA SECTION ===== */
+  .berita-section {
+    padding: 60px 100px;
+  }
+
+  .berita-section h2 {
+    text-align: left;
+    margin-bottom: 30px;
+    font-size: 26px;
+    color: #111;
+    font-weight: 600;
+  }
+
+  .berita-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+
+  .berita-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .berita-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .berita-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .berita-card-content {
+    padding: 15px;
+  }
+
+  .berita-card-content h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+    color: #111;
+    font-weight: 600;
+  }
+
+  .berita-card-content p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+
+  .berita-card-content small {
+    display: block;
+    margin-bottom: 10px;
+    color: #888;
+    font-size: 13px;
+  }
+
+  .berita-card-content a {
+    display: inline-block;
+    background-color: #0044cc;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .berita-card-content a:hover {
+    background-color: #0033aa;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background-color: #0b5394;
+    color: #ddd;
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 14px;
+    margin-top: 40px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+
+  footer p {
+    margin-bottom: 8px;
+  }
+
+  footer .social a {
+    color: white;
+    text-decoration: none;
+    margin: 0 8px;
+    font-size: 20px;
+    transition: color 0.3s;
+  }
+
+  footer .social a:hover {
+    color: #00aaff;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media(max-width: 1024px) {
+    header {
+      padding: 15px 40px;
+    }
+
+    .hero-berita {
+      padding: 60px 50px;
+    }
+
+    .berita-section {
+      padding: 50px 50px;
+    }
+  }
+
+  @media(max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px 25px;
+    }
+
+    nav ul {
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .hero-berita {
+      flex-direction: column;
+      text-align: center;
+      padding: 50px 25px;
+    }
+
+    .hero-berita-text {
+      max-width: 100%;
+    }
+
+    .hero-berita img {
+      width: 90%;
+      margin-top: 25px;
+    }
+
+    .berita-section {
+      padding: 40px 25px;
+    }
+
+    .berita-section h2 {
+      text-align: center;
+    }
+  }
+
+  @media(max-width: 480px) {
+    header .logo h2 {
+      font-size: 16px;
+    }
+
+    .hero-berita-text h1 {
+      font-size: 26px;
+    }
+
+    .hero-berita-text p {
+      font-size: 14px;
+    }
+
+    .hero-berita-text .btn {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+
+    footer {
+      font-size: 13px;
+    }
+  }
+</style>
+
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="img/logosmk.jpeg" alt="Logo Sekolah" width="50">
+      <h2>SMK Telkom Terpadu AKN Marzuqi</h2>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="jurusan.html">Jurusan</a></li>
+        <li><a href="ppdb.html">PPDB</a></li>
+        <li><a href="berita.html">Berita</a></li>
+        <li><a href="ekstra.html">Ekstra</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero-berita">
+    <div class="hero-berita-text">
+      <h1>Berita Terbaru SMK Telkom Terpadu AKN Marzuqi</h1>
+      <p>Ikuti berbagai informasi kegiatan, prestasi, dan pengumuman terbaru seputar sekolah kami.</p>
+      <a href="#daftar-berita" class="btn">Lihat Semua Berita</a>
+    </div>
+    <img src="img/smk.jpg" alt="Kegiatan Siswa">
+  </section>
+
+  <section class="berita-section" id="daftar-berita">
+    <h2>Berita Terbaru</h2>
+    <div class="berita-grid">
+      
+      <div class="berita-card">
+        <img src="img/img7.jpg" alt="Berita 1">
+        <div class="berita-card-content">
+          <h3>SMK Telkom Terpadu AKN Marzuqi Juara 1 Lomba Inovasi Digital 2025</h3>
+          <small>Dipublikasikan: 12 Oktober 2025</small>
+          <p>Tim siswa RPL berhasil meraih juara pertama dalam lomba inovasi aplikasi tingkat Jawa Tengah.</p>
+          <a href="#">Baca Selengkapnya</a>
+        </div>
+      </div>
+
+      <div class="berita-card">
+        <img src="img/img8.jpeg" alt="Berita 2">
+        <div class="berita-card-content">
+          <h3>Spirit Literasi SMK Telkom Terpadu AKN Marzuqi</h3>
+          <small>Dipublikasikan: 5 Oktober 2025</small>
+          <p>Kegiatan ini bertujuan sebagai respons terhadap tantangan literasi nasional dan sebagai upaya sekolah dalam menciptakan ekosistem pendidikan yang tidak hanya unggul dalam bidang teknologi informasi (sesuai spesialisasi SMK Telkom), tetapi juga kuat dalam aspek intelektual dan spiritual.</p>
+          <a href="#">Baca Selengkapnya</a>
+        </div>
+      </div>
+
+      <div class="berita-card">
+        <img src="img/img9.jpeg" alt="Berita 3">
+        <div class="berita-card-content">
+          <h3>Peringatan Maulid Nabi Siswa SMK Telkom Terpadu AKN Marzuqi</h3>
+          <small>Dipublikasikan: 5 September 2025</small>
+          <p>SMK Telkom Terpadu AKN Marzuqi menyelenggarakan peringatan Maulid Nabi Muhammad SAW dengan penuh khidmat. Kegiatan ini diikuti oleh seluruh siswa, dewan guru, serta staf sekolah yang turut berbaur dalam suasana penuh kebersamaan.</p>
+          <a href="#">Baca Selengkapnya</a>
+        </div>
+      </div>
+
+      <div class="berita-card">
+        <img src="img/img2.png" alt="Berita 4">
+        <div class="berita-card-content">
+          <h3>MPLS SMK Telkom Terpadu AKN Marzuqi: Mewujudkan Siswa Berintegritas dan Siap Berdaya Saing</h3>
+          <small>Dipublikasikan: 21 Juli 2025</small>
+          <p>SMK Telkom Terpadu (AKN) Marzuqi sukses menyelenggarakan Masa Pengenalan Lingkungan Sekolah (MPLS) bagi siswa baru tahun akademik 2025/2026. Kegiatan ini berlangsung selama lima hari, mulai Senin, 14 juli sampai Jum’at 18 Juli 2025.</p>
+          <a href="#">Baca Selengkapnya</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer disamakan dengan index -->
+  <footer>
+    <p>Jl. Raya Tayu-Puncel Km. 11 Selempung, Dukuhseti, Pati 59158</p>
+    <p>&copy; 2025 SMK Telkom Terpadu AKN Marzuqi</p>
+    <div class="social">
+      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://wa.me/6281234567890" target="_blank" class="wa"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </footer>
+
+</body>
+</html>

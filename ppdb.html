@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PPDB - SMK Telkom Terpadu AKN Marzuqi</title>
+
+  <!-- Font & Icon -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 15px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      flex-wrap: wrap;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    header .logo img {
+      width: 45px;
+    }
+
+    header .logo h2 {
+      font-size: 18px;
+      color: #333;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #007BFF;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      background-color: #f0f5ff;
+      padding: 80px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .hero-text {
+      max-width: 500px;
+      flex: 1;
+    }
+
+    .hero-text h1 {
+      font-size: 38px;
+      color: #111827;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .hero-text p {
+      color: #555;
+      margin-bottom: 25px;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .hero-buttons .btn {
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-right: 10px;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #006ae6;
+    }
+
+    .btn-outline {
+      background-color: white;
+      border: 1px solid #007BFF;
+      color: #007BFF;
+    }
+
+    .btn-outline:hover {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    .hero-img {
+      width: 350px;
+      height: auto;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .hero-img:hover {
+      transform: scale(1.05);
+    }
+
+    /* ===== ALUR PENDAFTARAN ===== */
+    .alur {
+      padding: 60px 80px;
+      text-align: center;
+    }
+
+    .alur h2 {
+      font-size: 26px;
+      margin-bottom: 35px;
+      font-weight: 700;
+    }
+
+    .alur-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .alur-item {
+      width: 180px;
+      text-align: center;
+    }
+
+    .alur-item img {
+      width: 60px;
+      margin-bottom: 12px;
+    }
+
+    .alur-item p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* ===== FORM & SYARAT ===== */
+    .form-section {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 40px 80px;
+    }
+
+    .box {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      flex: 1 1 350px;
+    }
+
+    .box h3 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #111;
+      font-weight: 600;
+    }
+
+    .box ul {
+      list-style: none;
+    }
+
+    .box ul li {
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* FORM */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    input, select {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+      font-size: 14px;
+    }
+
+    input[type="file"] {
+      border: none;
+    }
+
+    button {
+      background-color: #0056d2;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #003f99;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: #0b5394;
+      color: #ddd;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin-bottom: 8px;
+    }
+
+    footer .social a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 20px;
+      transition: color 0.3s;
+    }
+
+    footer .social a:hover {
+      color: #007BFF;
+    }
+
+    /* ====== RESPONSIVE DESIGN ====== */
+    @media (max-width: 992px) {
+      header {
+        padding: 15px 40px;
+      }
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-text {
+        max-width: 100%;
+      }
+      .hero-img {
+        width: 380px;
+      }
+      .alur {
+        padding: 40px 40px;
+      }
+      .form-section {
+        padding: 30px 40px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 10px 20px;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav ul {
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .hero-text h1 {
+        font-size: 28px;
+      }
+
+      .hero-text p {
+        font-size: 14px;
+      }
+
+      .hero-img {
+        width: 300px;
+      }
+
+      .alur h2 {
+        font-size: 22px;
+      }
+
+      .alur-item {
+        width: 140px;
+      }
+
+      .form-section {
+        padding: 20px;
+      }
+
+      footer {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="img/logosmk.jpeg" alt="Logo Sekolah">
+      <h2>SMK Telkom Terpadu AKN Marzuqi</h2>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="jurusan.html">Jurusan</a></li>
+        <li><a href="ppdb.html">PPDB</a></li>
+        <li><a href="berita.html">Berita</a></li>
+        <li><a href="ekstra.html">Ekstra</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Penerimaan Peserta Didik Baru</h1>
+      <p>Tahun Ajaran 2025/2026<br>Bergabunglah bersama Generasi Telkom Terpadu yang Unggul dan Islami.</p>
+      <div class="hero-buttons">
+        <a href="#formulir" class="btn btn-primary">Daftar Sekarang</a>
+        <a href="#syarat" class="btn btn-outline">Lihat Syarat</a>
+      </div>
+    </div>
+    <img src="img/img1.png" alt="Ilustrasi siswa" class="hero-img">
+  </section>
+
+  <!-- ALUR PENDAFTARAN -->
+  <section class="alur">
+    <h2>Alur Pendaftaran</h2>
+    <div class="alur-grid">
+      <div class="alur-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/1250/1250678.png" alt="">
+        <p>Isi formulir pendaftaran</p>
+      </div>
+      <div class="alur-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/724/724933.png" alt="">
+        <p>Unggah dokumen (KK, rapor, dsb)</p>
+      </div>
+      <div class="alur-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="">
+        <p>Konfirmasi melalui WhatsApp</p>
+      </div>
+      <div class="alur-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt="">
+        <p>Seleksi dan pengumuman</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULIR & SYARAT -->
+  <section class="form-section">
+    <div class="box" id="syarat">
+      <h3>Syarat & Ketentuan</h3>
+      <ul>
+        <li>✅ Minimal lulusan SMP/MTS</li>
+        <li>✅ Fotocopy ijazah, KK, dan Akta Kelahiran</li>
+        <li>✅ Mengisi formulir pendaftaran online</li>
+        <li>✅ Dokumen dimasukkan dalam 1 folder</li>
+      </ul>
+    </div>
+
+    <div class="box faq">
+      <h3>FAQ - Pertanyaan Umum</h3>
+      <ul>
+        <li>📍 Di mana lokasi sekolah?</li>
+        <li>📝 Apakah bisa daftar offline?</li>
+        <li>🎓 Apakah ada beasiswa?</li>
+      </ul>
+    </div>
+
+    <div class="box" id="formulir">
+      <h3>Formulir Pendaftaran</h3>
+      <form id="ppdbForm" onsubmit="return validateForm()">
+        <label>Nama Lengkap</label>
+        <input type="text" id="nama" placeholder="Nama lengkap" required>
+
+        <label>Asal Sekolah</label>
+        <input type="text" id="asal" placeholder="Asal sekolah" required>
+
+        <label>Email</label>
+        <input type="email" id="email" placeholder="Email aktif" required>
+
+        <label>Jurusan yang diminati</label>
+        <select id="jurusan" required>
+          <option value="">Pilih jurusan</option>
+          <option>Rekayasa Perangkat Lunak</option>
+          <option>Teknik Komputer dan Jaringan</option>
+          <option>Teknik Kendaraan Ringan</option>
+        </select>
+
+        <label>Unggah Dokumen (KK, Rapor, dsb)</label>
+        <input type="file" id="dokumen" required>
+
+        <button type="submit">Kirim Formulir</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Jl. Raya Tayu-Puncel Km. 11 Selempung, Dukuhseti, Pati 59158</p>
+    <p>&copy; 2025 SMK Telkom Terpadu AKN Marzuqi</p>
+    <div class="social">
+      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://wa.me/6281234567890" target="_blank" class="wa"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    function validateForm() {
+      const nama = document.getElementById("nama").value.trim();
+      const asal = document.getElementById("asal").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const jurusan = document.getElementById("jurusan").value.trim();
+      const dokumen = document.getElementById("dokumen").value.trim();
+
+      if (!nama || !asal || !email || !jurusan || !dokumen) {
+        alert("⚠️ Semua kolom wajib diisi!");
+        return false;
+      }
+
+      alert("✅ Formulir berhasil dikirim!");
+      return true;
+    }
+  </script>
+
+</body>
+</html>
